@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="weeklystatusmeeting" class="com.cm.beans.Meeting">
+    <property name="participents">
+    <list value-type="java.lang.String">
+    <value>Jhon</value>
+    <value>Alien</value>
+    <value>Smith</value>
+    </list>
+    </property>
+    </bean>
+
+    <bean id="standupcall" class="com.cm.beans.Meeting" parent="weeklystatusmeeting">
+       <property name="participents">
+       <list value-type="java.lang.String" merge="true">
+       <value>Rod</value>
+       <value>Cook</value>
+       </list>
+       </property>
+    </bean>
+</beans>
