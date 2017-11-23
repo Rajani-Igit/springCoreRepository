@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+   <bean id="rocket" class="com.beanlifecycle.beans.Rocket" init-method="init" destroy-method="destroy">
+   <constructor-arg value="17" />
+   <property name="level"  value="886"></property>
+   </bean>
+   <bean id="shutDownHookup" class="com.beanlifecycle.beans.ShutDownHookup"></bean>
+<!-- There are two problems with configuration approach
+
+1)It is mandatory to configure birth and death life cycle methods for a bean defination.
+if we forget to write those methods ioc container will never call those methods it will leads to incorrect results 
+
+2)For a bean we will configure multiple no of bean definations will be available for all the beans
+ we have to write birth and death life cycle methods so length of the code will be more 
+ readability will decrease
+ -->
+</beans>
