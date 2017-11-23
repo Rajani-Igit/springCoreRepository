@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd">
+
+    <bean id="meeting" class="com.cdi.beans.Meeting">
+    <constructor-arg name="candidates">
+    <set value-type="java.lang.String">
+    <value>sai</value>
+    <value>Prashanth</value>
+    </set>
+    </constructor-arg>
+    <property name="todolist">
+    <list value-type="java.lang.String">
+    <value>Requirements Of Project</value>
+    <value>Finalizing the budjet plans</value>
+    <value>Asking time to complete project</value>
+    </list>
+    </property>
+    </bean>
+    <bean id="meeting1" class="com.cdi.beans.Meeting" parent="meeting">
+       <constructor-arg name="candidates">
+       <set value-type="java.lang.String">
+         <value>Rajinikantha</value>
+         <value>Akshy</value>
+       </set>
+       </constructor-arg>
+    </bean>
+     <bean id="meeting2" class="com.cdi.beans.Meeting" parent="meeting">
+       <constructor-arg name="candidates">
+       <set value-type="java.lang.String">
+           <value>Bharath</value>
+    <value>Vinay</value>
+       </set>
+       </constructor-arg>
+    </bean>
+    <bean id="organization" class="com.cdi.beans.Organization" >
+    <constructor-arg name="hostName">
+    <props>
+    <prop key="1">sai</prop>
+    </props>
+    </constructor-arg>
+    <property name="schedular">
+    <map>
+       <entry key="1" value-ref="meeting"></entry>
+       <entry key="2">
+       <ref bean="meeting1"/>
+       </entry>
+       <entry>
+       <key><value>3</value></key>
+       <ref bean="meeting2"/>
+       </entry>
+    </map>
+    </property>
+    </bean>
+</beans>
