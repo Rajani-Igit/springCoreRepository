@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- <bean id="bluedartdeliveryservice" class="com.ba.beans.BlueDartDeliveryServiceImpl"></bean> -->
+<bean id="dtdcdeliveryservice" class="com.ba.beans.DTDCDeliveryServiceImpl"></bean>
+<bean id="ordermanager" class="com.ba.beans.OrderManager" >
+<property name="dtdcdeliverservice" ref="dtdcdeliveryservice"></property>
+<property name="bluedartdeliverservice" ref="bluedartdeliveryservice"></property>
+</bean>
+<alias name="dtdcdeliveryservice" alias="bluedartdeliveryservice"/>
+</beans>
