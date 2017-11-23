@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+   <bean id="meeting" class="com.factorybeans.beans.Meeting">
+   <property name="meetingId" value="10"></property>
+   <property name="participents" >
+   <list value-type="java.lang.String">
+   <value>Sairam</value>
+   <value>Rajinikantha</value>
+   <value>Satish</value>
+   </list>
+   </property>
+   <property name="description" value="BoardOfMeeting for Project delivery"></property>
+   <property name="dateMeeting" ref="calander"></property>
+   </bean>
+   <bean id="calander" class="com.factorybeans.beans.CalanderFactoryBean" scope="singleton" >
+     <property name="year" value="2017" />
+     <property name="month" value="07" />
+     <property name="date" value="29" />
+   </bean>
+   </beans>
