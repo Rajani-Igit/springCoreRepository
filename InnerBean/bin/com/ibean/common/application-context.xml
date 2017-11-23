@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="bycycle" class="com.ibean.beans.ByCycle">
+    <constructor-arg value="101"></constructor-arg>
+    <constructor-arg value="ATLAS"></constructor-arg>
+    <property name="chain">
+      <bean id="chain" class="com.ibean.beans.Chain">
+     <property name="id" value="CHAIN10"></property>
+     <property name="leng" value="25"></property>
+     </bean>
+    </property>
+   </bean>
+      <!-- <bean id="chain" class="com.ibean.beans.Chain">
+     <property name="id" value="CHAIN10"></property>
+     <property name="leng" value="25"></property>
+     </bean> -->
+</beans>
