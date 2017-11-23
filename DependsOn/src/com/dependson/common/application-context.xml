@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd" >
+    <bean id="cache" class="com.dependson.beans.Cache" factory-method="getInstance"></bean>
+    <bean id="loanPlanner" class="com.dependson.beans.LoanPlanner" depends-on="cacheManager">
+      <property name="cache" ref="cache"></property>
+    </bean>
+    <bean id="intrestRateAcessor" class="com.dependson.util.IntrestRateAcessor" >
+    <constructor-arg name="ri_key" value="intrestRate"></constructor-arg>
+    </bean>
+    <bean id="cityNameAcessor" class="com.dependson.util.CityNamesAcessor">
+    <constructor-arg name="cityName" value="cityNames"></constructor-arg>
+    </bean>
+    <bean id="cacheManager" class="com.dependson.beans.CacheManager">
+     <constructor-arg ref="cache"></constructor-arg>
+     <constructor-arg >
+       <list value-type="com.dependson.util.IAcessor">
+       <ref bean="intrestRateAcessor"/>
+       <ref bean="cityNameAcessor"/>
+       </list>
+     </constructor-arg>
+    </bean>
+</beans>
