@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+    <bean id="dateConverter" class="com.springsingle.beans.DateConverter" scope="prototype">
+    <property name="fromDate"><ref bean="fromDate" /></property>
+    <property name="toDate" ref="toDate"></property>
+    </bean>
+    <bean id="fromDate" class="java.util.Date"></bean>
+    <bean id="toDate" class="java.util.Date"></bean>
+</beans>
