@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+   <bean id="roboat" class="com.baw.beans.Roboat" autowire="constructor"></bean>
+  <!--  <bean id="chip1" class="com.baw.beans.Chip" >if i change id name it cant identify the name and it will not inject 
+   <property name="id" value="10"></property>
+   <property name="chipType" value="32 bit"></property> 
+   </bean> -->
+ <!--   
+    <bean id="chip1" class="com.baw.beans.Chip" autowire-candidate="false">if i provide same type two times in bean defination with two different id names then there will be a ambiguity
+   <property name="id" value="20"></property>
+   <property name="chipType" value="64 bit"></property>
+   </bean> -->
+   
+ <!--   <bean id="chip2" class="com.baw.beans.Chip" >
+   <property name="id" value="10"></property>
+   <property name="chipType" value="32 bit"></property>
+   </bean> -->
+   
+   <bean  id="sensor" class="com.baw.beans.Sensor">
+   <property name="id" value="100"></property>
+   <property name="sensorType" value="infrared"></property>
+   </bean>
+</beans>
