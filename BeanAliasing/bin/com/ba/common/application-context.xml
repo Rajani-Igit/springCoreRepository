@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="samsung" name="s1,s2,s3,s4,s5" class="com.ba.beans.Mobile">
+<property name="version" value="1.0"></property>
+<property name="model" value="s-series"></property>
+</bean>
+<alias name="s1" alias="s6-s8"/>
+
+<bean id="motrola" name="g1,g2,g3,g4,g5" class="com.ba.beans.Mobile">
+<property name="version" value="1.0"></property>
+<property name="model" value="g-series"></property>
+</bean>
+<alias name="g1" alias="E-series and X-series"/>
+
+</beans>
