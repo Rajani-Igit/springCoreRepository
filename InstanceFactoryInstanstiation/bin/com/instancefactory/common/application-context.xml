@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="serviceLocator" class="com.instancefactory.beans.StackTradeServiceLocator"></bean>
+    <bean id="iStackTrade" factory-bean="serviceLocator" factory-method="serviceLocator"></bean>
+    <bean id="findStackTrade" class="com.instancefactory.beans.FindStackTrade">
+    <property name="stackName" value="cipla"></property>
+   <!--  <property name="iStackTrade" ref="iStackTrade"></property> -->
+    </bean>
+
+</beans>
