@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="CSEStudent" class="com.cm.beans.Student" >
+    <property name="subjects">
+    <list value-type="java.lang.String">
+    <value>DataStructure</value>
+    <value>OperatingSystems</value>
+    </list>
+    </property>
+    </bean>
+    
+    <bean id="ECEStudent" class="com.cm.beans.Student" parent="CSEStudent">
+    <property name="subjects">
+    <list value-type="java.lang.String" merge="true">
+    <value>EDC</value>
+    <value>SignalsSystem</value>
+    </list>
+    </property>
+    </bean>
+</beans>
