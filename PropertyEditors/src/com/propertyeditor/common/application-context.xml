@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="book" class="com.propertyeditor.beans.Book">
+    <property name="isdn" value="20"></property>
+    <property name="name" value="JAVAEE Book"></property>
+    <property name="publishedDate" value="10/07/1993" />
+    <property name="site" value="http://www.google.com" />
+    <property name="tocFile" value="C:\Users\t05053\Downloads\export.sql" />
+    <property name="authors" value="Sairam,Rajanikantha" />
+    <!-- <array value-type="java.lang.String">
+      <value>Sairam</value>
+      <value>Rajanikanta</value>
+    </array>
+    </property> -->
+    </bean>
+   <!--Property Editors are Usefull in editing the attribute values from String format to Required format
+    In an application we may use the same bean for multiple times so it is very difficult to the programmer
+    to write this much amount of configuration information.So IOC container identified those problems,
+    and provided some inbuilt Property Editors as part of IOC Container.There are several PropertyEditors are available in IOC Container
+    To convert String to Date and String to File and String to URL.but this will be applicable only to objects but not primitive
+    for primitives ioc container itself will take care of Converting String to integer or boolean or Float or Double or Long
+    How it works internally means first we have to create one CustomPropertyEditor to convert String values to Object ref.
+    
+    <bean id="publishedDate" class="java.util.Date"></bean>
+    
+    <bean id="site" class="java.net.URL">
+      <constructor-arg value="http://www.google.com"></constructor-arg>
+    </bean>
+    
+    <bean id="tocFile" class="java.io.File">
+      <constructor-arg value="C:\Users\t05053\Downloads\export.sql"></constructor-arg>
+    </bean> -->
+    
+</beans>
