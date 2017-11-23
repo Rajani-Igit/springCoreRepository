@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd">
+		
+      <bean id="student" class="com.cdi.beans.Student">
+      <constructor-arg name="courses" ref="firstset"></constructor-arg>
+      <property name="subjects" ref="firstlist"></property>
+      </bean>
+    
+      <bean id="student1" class="com.cdi.beans.Student" parent="student">
+      <constructor-arg name="courses" ref="secondset"></constructor-arg>
+      <property name="subjects" ref="secondlist"></property>
+      </bean>
+    
+      <bean id="college" class="com.cdi.beans.College">
+      <constructor-arg name="hodepartment" ref="firstmap"></constructor-arg>
+      <property name="topper" ref="firstProp"></property>
+      </bean>
+   
+<util:list id="firstlist" list-class="java.util.ArrayList" value-type="java.lang.String" >
+    <value>Machines</value>
+    <value>Circuits</value>
+    <value>Diodes</value>
+    <value>BEE</value>
+</util:list>
+
+<util:set id="firstset" set-class="java.util.HashSet" value-type="java.lang.String">
+    <value>EEE</value>
+    <value>ECE</value>
+</util:set>
+
+<util:list id="secondlist" list-class="java.util.LinkedList" value-type="java.lang.String" >
+    <value>DMM</value>
+    <value>Thermodynamics</value>
+    <value>Drawing</value>
+    <value>HeatTransfer</value>
+</util:list>
+
+<util:set id="secondset" set-class="java.util.HashSet" value-type="java.lang.String">
+    <value>MECH</value>
+    <value>CIVIL</value>
+</util:set>
+
+<util:map id="firstmap" map-class="java.util.HashMap" key-type="java.lang.String" value-type="com.cdi.beans.Student">
+    <entry key="Rameshbabu"><ref bean="student" /></entry>
+    <entry key="sunil prathap" value-ref="student1"></entry>
+</util:map>
+
+<util:properties id="firstProp" >
+   <prop key="rank 1">pradeep</prop>
+   <prop key="rank 2">sairam</prop>
+   <prop key="rank 3">Saishashank</prop>
+</util:properties>
+</beans>
