@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="car" class="com.dcheck.beans.Car" dependency-check="all">
+	<property name="company" value="Maruthi"></property>
+	<property name="cost" value="150000.500"></property>
+	<property name="modelYear" ref="date"></property> 
+	<property name="id" value="98765"></property>
+	<property name="engine" ref="engine"></property>
+	</bean>
+    <bean id="engine" class="com.dcheck.beans.Engine" >
+    <constructor-arg value="BS3 Engine"></constructor-arg>
+    <constructor-arg value="123"></constructor-arg>
+    <constructor-arg value="Petrol Type"></constructor-arg>
+    </bean>
+    <bean id="date" class="java.util.Date"></bean>
+</beans>
