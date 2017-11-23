@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="dateConverter" class="com.staticfactory.beans.DateConverter" scope="singleton" factory-method="getInstance"></bean>
+    <bean id="cloudMeetingManager" class="com.staticfactory.beans.CloudMeetingManager">
+      <property name="agenda" value="Details about Delivey Date"></property>
+      <property name="description" value="Project Explination and the functionality of the project"></property>
+      <property name="dateConverter" ref="dateConverter"></property>
+    </bean>
+</beans>
