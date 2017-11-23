@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+   <bean id="car" class="com.bi.beans.Car">
+  <!--  <constructor-arg value="100" name="id"></constructor-arg>
+   <constructor-arg value="Desire" name="model"></constructor-arg>
+   <constructor-arg value="Petrol" name="fuelType"></constructor-arg>
+   <constructor-arg value="Maruthi" name="manufaturer"></constructor-arg>
+   <constructor-arg value="Manual" name="transimissionType"></constructor-arg> -->
+  
+  
+  
+    <property name="id" value="100"></property>
+    <property name="model" value="Desire"></property>
+    <property name="fuelType" value="Petrol"></property>
+    <property name="manufaturer" value="Maruthi"></property>
+    <property name="transimissionType" value="Manual"></property>
+  
+   </bean>
+  
+    <!-- <bean id="car1" class="com.bi.beans.Car" parent="car">
+   <constructor-arg value="200" name="id"></constructor-arg>
+   <constructor-arg value="Diesel" name="fuelType"></constructor-arg>
+   <constructor-arg value="Automatic" name="transimissionType"></constructor-arg>
+   
+    <property name="id" value="200"></property>
+      <property name="fuelType" value="Diesel"></property>
+      <property name="transimissionType" value="Automatic"></property> 
+  </bean> -->
+   
+   <bean id="bus" class="com.bi.beans.Bus" parent="car"  >
+  
+   <!-- <constructor-arg  value="250"></constructor-arg> -->
+   <property name="capacity" value="150" ></property>
+   </bean> 
+
+</beans>
