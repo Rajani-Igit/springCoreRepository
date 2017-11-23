@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="eBook" class="com.beanpp.beans.EBook">
+      <property name="bookId" value="10"></property>
+      <property name="size" value="5"></property>
+      <property name="title" value="Let Us C"></property>
+    </bean>
+    <bean id="videos" class="com.beanpp.beans.Videos">
+      <property name="lenght" value="60"></property>
+      <property name="title" value="internals of C"></property>
+      <property name="videosId" value="24"></property>
+    </bean>    
+    <bean id="tibpp" class="com.beanpp.beans.TrackingInstancesBeanPostProcessor"></bean>
+    <bean id="tracker" class="com.beanpp.beans.Tracker"></bean>
+</beans>
