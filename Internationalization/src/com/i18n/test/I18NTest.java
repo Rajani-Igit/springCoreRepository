@@ -12,9 +12,12 @@ import org.springframework.core.io.ClassPathResource;
 
 public class I18NTest {
     public static void main(String[] args) {
-      /*If you use BeanFactory to find particular bundle(messages.properties)we can do by this way
+    	
+      /* Previous Examples for ResourceBundles are Written inside DependsOn Usecase Please Refer it.For Managing the ResourceBundles Through Java Codeing
+        
+        If you use BeanFactory to find particular bundle(messages.properties)we can do by this way
     	but the problem with this approach is we have to write the entire logic for creating the MessageSource Object
-    	First we have to configure it in Application-context then create BeanFactory object by using this Object we have to get
+    	First we have to configure it in application-context.xml then create BeanFactory object, by using this Object we have to get
     	MessageSource object 
     	Not Exactly the MessageSource Object but its implementation class.It is an interface
     	There are two implementation classes are there
@@ -23,7 +26,7 @@ public class I18NTest {
     	To Make it lossely coupled we have to provide Interface references
     	And BeanFactory is not supporting Internationalization by default where as 
     	ApplicationContext is Supporting Internationalization bcz it is implementing MessageResource 
-    	and provided the implementation for unimplemented methods so with the help of applicationContext Object we can directly acess this 
+    	and provided the implementation for unimplemented methods so with the help of applicationContext Object we can directly access this 
     	But how context object will know about our message bundles means we have to configure all our message and error bundles in configuration file
     	so at the time of creating the object for ResourceBundleMessageSource Objet it will identify the bean id as messageSource 
     	the same we have to configure in configuration file bcz it will be injected to ApplicationContext implemented class
