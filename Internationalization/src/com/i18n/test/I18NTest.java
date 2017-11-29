@@ -14,7 +14,7 @@ public class I18NTest {
     public static void main(String[] args) {
       /*If you use BeanFactory to find particular bundle(messages.properties)we can do by this way
     	but the problem with this approach is we have to write the entire logic for creating the MessageSource Object
-    	First we have to configure it in Application-context then create BeanFactory object byuusing this Object we have to get
+    	First we have to configure it in Application-context then create BeanFactory object by using this Object we have to get
     	MessageSource object 
     	Not Exactly the MessageSource Object but its implementation class.It is an interface
     	There are two implementation classes are there
